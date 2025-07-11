@@ -1,0 +1,21 @@
+// nodemon --quiet "script.js"
+
+{
+  "quiet":true
+}
+
+{
+  "quiet": true,
+  "verbose": false,
+  "events": {
+    "start": "echo 🟢 [$(date +\"%H:%M:%S\")] Script started.",
+    "restart": "echo 🔄 [$(date +\"%H:%M:%S\")] Changes detected. Restarting...",
+    "quit": "echo ❌ [$(date +\"%H:%M:%S\")] Nodemon quit.",
+    "crash": "echo 💥 [$(date +\"%H:%M:%S\")] Script crashed!"
+  },
+  "watch": ["."],
+  "ext": "js,mjs,cjs,json",
+  "execMap": {
+    "js": "node"
+  }
+}
