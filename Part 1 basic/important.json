@@ -19,3 +19,42 @@
     "js": "node"
   }
 }
+
+
+
+// setting 
+
+{
+  "files.autoSave": "afterDelay",
+  "editor.minimap.renderCharacters": false,
+  "editor.minimap.enabled": false,
+  "explorer.compactFolders": false,
+  "breadcrumbs.enabled": false,
+  "editor.stickyScroll.enabled": false,
+  "github.copilot.enable": {
+    "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": "comment",
+        "settings": {
+          "foreground": "#149c7c",
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "workbench.colorCustomizations": {
+    "editor.background": "#000000",
+    "sideBar.background": "#000000",
+    "activityBar.background": "#000000",
+    "titleBar.activeBackground": "#000000",
+    "titleBar.inactiveBackground": "#000000"
+  },
+  "workbench.colorTheme": "Default Dark+"
+}
