@@ -79,9 +79,6 @@
 
 
 
-
-
-
 // using spread operator, return new array and creates a shallow copy
 
 // let arr=[1,2,3,4,{"address":{"city":"maharajganj"}}];
@@ -158,9 +155,12 @@
 
 }
 
+
+
 // const arr1 = [1,{"address":{"city":"maharajganj"}}, 2, 3];
 // const arr2 = [4, 5, 6];
 // const combined = arr1.concat(arr2);
+// console.log(combined);
 
 // combined[1].address.city="siddharth nagar"
 // console.log(arr1[1].address.city);
@@ -177,9 +177,9 @@
 // console.log(newArr);
 // require('util').inspect.defaultOptions = { compact: true };
 
-console.log([1,2,3,4,5,6,7]);
-console.log([1, 2, 3, 4, 5, 6, 7]);
-console.log({ name: "Captain", age: 22 });
+// console.log([1,2,3,4,5,6,7]);
+// console.log([1, 2, 3, 4, 5, 6, 7]);
+// console.log({ name: "Captain", age: 22 });
 
 
 // using JSON.parse(JSON.stringify(data))
@@ -208,21 +208,24 @@ console.log({ name: "Captain", age: 22 });
 // [1, 2, { name: 'Alice' }]
 
 // verification
-// let str=JSON.stringify(arr);
-// console.log(JSON.parse(str));
+// const arr = [1, 2, { name: 'Alice',address:{"city":"MaharajGanj"} }];
+// const deepCopy=JSON.parse(JSON.stringify(arr))
+// deepCopy[2].address.city="Siddhart Nagar"
+// deepCopy[0]=786
 
 
-// deepCopy[2].name="shah";
-// deepCopy[2].address.lin1="pachmohni"
-// console.log(arr[2].name,deepCopy[2].name);
-// console.log(arr[2].address.lin1,deepCopy[2].address.lin1);
+// console.log(arr,deepCopy);
+
+
+
+
 
 
 
 
 
 // using structured clone 
-// //const cloned = structuredClone(value);
+// const cloned = structuredClone(value);
 
 
 // 🔹 What is Structured Cloning?
@@ -372,6 +375,10 @@ console.log({ name: "Captain", age: 22 });
 //   console.log(elm);
 // }
 
+// for(const [elm,k] of fruits){
+//   console.log(elm,k);
+// }
+
 
 
 
@@ -413,6 +420,8 @@ console.log({ name: "Captain", age: 22 });
 
 // const [v1,v2,v3,v4,v5="fifth",v6]=["first","second",'third',"fourth",undefined]
 // console.log(v1,v2,v3,v4,v5,v6,v7=55);//first second third fourth fifth undefined 55
+// console.log(k=44);
+
 
 // swaping value
 
@@ -421,11 +430,13 @@ console.log({ name: "Captain", age: 22 });
 // [x,y]=[y,x]
 // console.log(x,y);
 
-// rest parametor // work with diffrent scinarios
+// rest parametor // work with diffrent scinarios, The rest parameter in JavaScript allows a function to accept an indefinite number of arguments as an array.
+
+
 
 // const arr=[1,2,3,4,5,6];
-// // let [x,y,...rest,p]=arr;//error rest element must be at last
-// // let [...p,x,y]=arr;//same error
+// let [x,y,...rest,p]=arr;//error rest element must be at last
+// let [...p,x,y]=arr;//same error
 // let [x,y,...rest]=arr;
 // console.log(x,y);
 // console.log(rest);//[3,4,5,6]
@@ -446,6 +457,8 @@ console.log({ name: "Captain", age: 22 });
 // }
 
 
+
+
 // most importaint Array method in javaScript
 // most importaint Array method in javaScript
 // most importaint Array method in javaScript
@@ -464,7 +477,7 @@ console.log({ name: "Captain", age: 22 });
 // thisArgs is a argument which passed as the place of this
 
 // let arr=[1,2,3,4,5]
-// // arr.forEach()//error provide a call back function
+// arr.forEach()//error provide a call back function
 
 
 // arr.forEach(function (elem,index,arrs){
@@ -539,17 +552,23 @@ console.log({ name: "Captain", age: 22 });
 // Map method used to transforming array it create a new array by appling callback function
 // arr.map((elem,index,arr),thisArgs);
 // takes a callback function; if callback function doesn't return anything then by default it retuns undefined
-//execute for undefined but not for empty slot and forEach also
+//execute for undefined but not for empty slot and forEach also new array contains empty slot also
 
-// const arr=[1,2,,undefined,3,4,5]
+// const arr=[1,2,,undefined,3,4,5,,"last"]
 // const newAr=arr.map((elem,index,arr)=>{
 // console.log(elem);
-// return elem*2;//return with multiplication of 2
+// // return elem*2;//return with multiplication of 2
 // })
 
-// // // console.log(newAr);//undefined without return
+// const na=arr.map((elm)=>elm)
+// console.log(na);
+
+// console.log(newAr);
+// console.log(arr.length,newAr.length);
+
 // console.log(newAr);//undefined without return
 // // most useful in react js for extracting values and return it as array
+
 
 // const arrObj=[{"name":"captain","role":"software Engineer"},{"name":"sodi","role":"Student"},{"name":"sakib","role":"Gamming"}]
 
@@ -579,9 +598,11 @@ console.log({ name: "Captain", age: 22 });
 //     }
 //     return false;
 // })
-// // in short
-// let evenSort=arr.filter((elem)=>elem%2==0)
 
+// // in short
+
+
+// let evenSort=arr.filter((elem)=>elem%2==0)
 // console.log(even);
 // console.log(evenSort);
 
@@ -599,15 +620,16 @@ console.log({ name: "Captain", age: 22 });
 
 // if initial value is not provided then acum initial value will  be the first element of array and iteration start from second element if provided then iteration start from first element// at the last the single value is returned without return statement undefined is returned
 
-// don't be confused it works simply but accumulator is a value that is by defaul the first element and if provided then it is takes intialValue and in the return any thing can be returned but single value will be returned; it can be array object anything; but at the last the value is returned; every time the return value will be the accumulator value and at the last the acumulator value will be return as result
+// don't be confused it works simply but accumulator is a value that is by defaul the first element and if provided then it is takes intialValue and in the return any thing can be returned but single value will be returned; it can be array object anything; but at the last the value is returned;
+//  every time the return value will be the accumulator value and at the last the acumulator value will be return as result
 
-// let arr=[1,2,3,4,5]
+// let arr=[1,2,3,4]
 
 // let sum=arr.reduce((acum,elem)=>{
 //     // console.log(acum,elem);
-//     acum=acum+elem;
+//     // acum=acum+elem;
 //     return acum;
-// },5)
+// },10)
 // console.log(sum);
 
 // // in short
@@ -627,10 +649,10 @@ console.log({ name: "Captain", age: 22 });
 
 // problem
 // let uns = [100, 50, 400, 30, 20, 110]
-// // let sort=uns.sort();
-// // console.log(sort);//[100, 110, 20, 30, 400, 50]
-// // solve using compare function
+// let sort=uns.sort();
+// console.log(sort);//[100, 110, 20, 30, 400, 50]
 
+// solve using compare function
 // let sort = uns.sort((a, b) => {//a=50 b=10 (first iteration) a=400 b=50 (second iteration)
 //     // return 10; // not effected compare function is a special function
 //     return a-b;
@@ -638,12 +660,13 @@ console.log({ name: "Captain", age: 22 });
 
 // console.log(sort);
 
-// let uns = [100, 50, 400, 30, 20, 110]
+let uns = [100, 50, 400, 30, 20, 110]
 // let sortDes = uns.sort((a, b) => {//a=50 b=10 (first iteration) a=400 b=50 (second iteration)
 //     return b-a;
 // })
 
 // console.log(sortDes);
+
 
 // if a-b is negative a come before b if negative then b come before a and if zero the order will unchanged
 
@@ -672,7 +695,7 @@ console.log({ name: "Captain", age: 22 });
 
 // const user=users.find((urs)=>urs.name=="captain")
 
-// // const user=users.find((urs)=>urs.name=="sakib" && urs.role=="Gamer")
+// const user=users.find((urs)=>urs.name=="sakib" && urs.role=="Gamer")
 // console.log(user);//{name:"captain",role:"Engineer"}
 
 // findLast start from last index and find last element
@@ -709,14 +732,14 @@ console.log({ name: "Captain", age: 22 });
 // let empy=[,,,] 
 // console.log(empy.length);//3
 
-// // let result=empy.every((elm)=>{elm>10})
-// // console.log(result);//true becouse there is nothing to check same if there is empty elements
+// let result=empy.every((elm)=>{elm==elm>10})
+// let result=empy.every((elm)=>{elm==undefined})
+// console.log(result);//true becouse there is nothing to check same if there is empty elements
 
 
 // let empy=[,,,undefined]
 // let result=empy.every((elm)=>{elm>10})
 // console.log(result);//false undefinded will be checked
-
 
 
 // some check atleast one element satisfied the conditio
@@ -735,8 +758,9 @@ console.log({ name: "Captain", age: 22 });
 // syntax : arr.fill(val,start,end) end index is not included
 
 // let arr=[1,2,3,4,5]
-// // // arr.fill(786,,4)//error
-// // arr.fill();//undefined all
+// // arr.fill(786,,4)//error
+// arr.fill();//undefined all
+// console.log(arr);
 
 // let result=arr.fill(10)
 // console.log(result,arr);
