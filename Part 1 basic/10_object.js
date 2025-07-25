@@ -30,7 +30,7 @@
 //     console.log(this);
 // }
 
-// const car1=new Car("Toyota","Fortuner");// without new car1 undefined
+// const car1=Car("Toyota","Fortuner");// without new car1 undefined
 // const car2=new Car("Maruti Suguki","Swirft desire");
 // console.log(car1);
 // console.log(car2);
@@ -41,7 +41,7 @@
 
 // const obj2=Object.create(obj1)
 // obj2.price=8000000;
-// console.log(obj2.price);
+// console.log(obj2.price,obj2.brand);
 
 
 
@@ -126,6 +126,11 @@
 
 //   console.log(profile.age);
 //   console.log(profile.key);//undefined
+//   console.log(profile[key]);
+// console.log(profile.undeclaredVar);
+// console.log(profile[undeclaredVar]);
+
+
 //   console.log(profile."user name");//error
 
 //   console.log(profile.101);//syntax error
@@ -191,6 +196,9 @@
 
 // let key="name";
 // console.log(person.age);
+// console.log(person["age"]);
+// console.log(person[age]);
+
 // console.log(person["home address"]);
 // console.log(person[key]);
 
@@ -218,7 +226,7 @@
 // delete person["full name"]
 // console.log(person["full name"]);//undefined
 
-// // check property is exist or not
+// // // check property is exist or not
 // console.log("name" in person);
 // console.log("age" in person);//false
 // console.log(101 in person);

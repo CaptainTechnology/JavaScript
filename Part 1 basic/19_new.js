@@ -17,49 +17,49 @@
 
 
 
-function createUser(name, age) {
-    const user = Object.create(createUser.prototype); // Manually set the prototype 
-    user.name = name;
-    user.age = age;
-    return user;
-}
+// function createUser(name, age) {
+//     const user = Object.create(createUser.prototype); // Manually set the prototype 
+//     user.name = name;
+//     user.age = age;
+//     return user;
+// }
 
 
-// Add shared method to the prototype
-createUser.prototype.about = function () {
-    return `${this.name} is ${this.age} years old.`;
-};
+// // Add shared method to the prototype
+// createUser.prototype.about = function () {
+//     return `${this.name} is ${this.age} years old.`;
+// };
 
 
 // Create user without `new`
-const user1 = createUser('Harshit', 18);
+// const user1 = createUser('Harshit', 18);
 
 // Test output
-console.log(user1.about()); // Output: "Harshit is 18 years old."
-console.log(user1 instanceof createUser); // true
+// console.log(user1.about()); // Output: "Harshit is 18 years old."
+// console.log(user1 instanceof createUser); // true
 
-// -------------------------------------------------------
-// ✅ Object Creation USING the `new` keyword
-// -------------------------------------------------------
+// // -------------------------------------------------------
+// // ✅ Object Creation USING the `new` keyword
+// // -------------------------------------------------------
 
-function CreateUser(name, age) {
-    // When called with `new`, `this` refers to the newly created object
-    this.name = name;
-    this.age = age;
-    // No need to return explicitly
-}
+// function CreateUser(name, age) {
+//     // When called with `new`, `this` refers to the newly created object
+//     this.name = name;
+//     this.age = age;
+//     // No need to return explicitly
+// }
 
-// Add shared method to the prototype
-CreateUser.prototype.about = function () {
-    return `${this.name} is ${this.age} years old.`;
-};
+// // Add shared method to the prototype
+// CreateUser.prototype.about = function () {
+//     return `${this.name} is ${this.age} years old.`;
+// };
 
-// Create user using `new`
-const userB = new CreateUser('Mohit', 20);
+// // Create user using `new`
+// const userB = new CreateUser('Mohit', 20);
 
-// Test output
-console.log(userB.about());               // Output: "Mohit is 20 years old."
-console.log(userB instanceof CreateUser); // true (correct prototype chain)
+// // Test output
+// console.log(userB.about());               // Output: "Mohit is 20 years old."
+// console.log(userB instanceof CreateUser); // true (correct prototype chain)
 
 
 

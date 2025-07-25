@@ -12,6 +12,8 @@
 // const nums1 = [1, 2, 3,[44,55],{"name":"shah"}];
 // const nums2 = [4, 5, 6];
 // const combined = [...nums1, ...nums2];
+// console.log(combined);
+
 
 // combined[4].name="captain"
 // console.log(combined[4].name); // [1, 2, 3, 4, 5, 6]

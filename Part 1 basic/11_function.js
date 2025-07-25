@@ -4,17 +4,16 @@
 // function declairation define a function with name and can be used before it's defination becouse of hoisting, it is also called function statement
 
 
-// greet();
-
+// const result=greet();
 // function greet(){
 //     console.log("function declairation");
+//     return 2+3;
 // }
-
+// console.log(result)
 
 
 // What Is a Function Expression?
 // A function expression is when a function is assigned to a variable. Unlike function declarations, function expressions are not hoisted, and they can be anonymous (no name required).
-
 
 
 // const greet = function (name) {
@@ -22,6 +21,7 @@
 // };
 
 // console.log(greet("Alice")); // Output: Hello, Alice!
+
 
 // // anonymouse function
 
@@ -39,16 +39,17 @@
 
 
 // Traditional function
+
 // function add(a, b) {
 //     return a + b;
 //   }
 
-  // Arrow function version
+// Arrow function version
 //   const add = (a, b) => {
 //     return a + b;
 //   };
 
-  // Even shorter (implicit return)
+// Even shorter (implicit return)
 //   const add = (a, b) => a + b;
 
 
@@ -106,7 +107,7 @@
 //     console.log(arguments); // ❌ ReferenceError: arguments is not defined
 //   };
 
-//   showArgsArrow(1, 2, 3);
+// showArgsArrow(1, 2, 3);
 
 
 // const showArgsArrow = (...args) => {
@@ -157,7 +158,8 @@
 
 
 
-// const arrowFunction={
+
+// const arrowFunction = {
 //     "ArrowVsRegularFunction": {
 //       "Overview": {
 //         "ArrowFunction": {
@@ -180,7 +182,6 @@
 //           ]
 //         }
 //       },
-
 //       "FeatureComparison": [
 //         {
 //           "Feature": "Syntax",
@@ -208,7 +209,6 @@
 //           "RegularFunction": "✅ Works correctly"
 //         }
 //       ],
-
 //       "UseCases": [
 //         {
 //           "Title": "Simple callback or one-liner",
@@ -285,7 +285,10 @@
 //         }
 //       ]
 //     }
-//   }
+// }
+
+
+
 
 
 
@@ -360,6 +363,8 @@
 
 
 // function testVar() {
+//   console.log(x);
+  
 //     if (true) {
 //       var x = 10;
 //     }
@@ -389,6 +394,15 @@
 
 //   testLetConst();
 
+  // if (true) {
+  //     let y = 20;
+  //     const z = 30;
+  //     console.log(y); // ✅ 20
+  //     console.log(z); // ✅ 30
+  //   }
+  //   console.log(y);
+    
+
 // 🧠 Why This Matters
 // When you use var, it's easy to accidentally overwrite or leak variables because it doesn’t respect blocks.
 
@@ -402,8 +416,8 @@
 
 //   const showSecret = outerFunction();
 //   showSecret(); // 🔒 Secret message
-//     setTimeout(() => console.log(i), 100);
-// }
+//   setTimeout(() => console.log(i), 100);
+
 // // Output: 3 3 3 — all same, due to function scope
 
 // for (let i = 0; i < 3; i++) {
@@ -428,15 +442,16 @@
 //     console.log(msg);
 //   }
 
+//   showMessage()
 //   showMessage(undefined); // ✅ No message (default used)
 //   showMessage(null);      // ❌ null (no default used)
 //   showMessage("");        // ❌ (empty string, still counts as a value)
 
 //   old way before exma script
-//   function greet(name) {
-//     name = name || "Guest";
-//     console.log("Hello, " + name);
-//   }
+  // function greet(name) {
+  //   name = name || "Guest";
+  //   console.log("Hello, " + name);
+  // }
 
 
 // collect multiple arguments into an array// rest parameter should be at last
@@ -469,7 +484,6 @@ This works with:
 //     console.log(name); // Only 'name' is available
 //     console.log(age);  // Only 'age' is available
 //     console.log(salary);
-    
 //   }
 
 //   const user = { name: "Luna", age: 22, email: "luna@example.com" };
@@ -525,13 +539,14 @@ This works with:
 //     sum(result);
 // }
 
-// // function sum(result){
-// //     console.log("Result is :",result);
-// // }
+// function sum(result){
+//     console.log("Result is :",result);
+// }
 
 // let sum = function (result) {
 //     console.log("Result is :", result);
 // }
+
 // greet(3, 4, sum)
 
 
@@ -560,9 +575,9 @@ Write clean, modular code
 //     };
 //   }
 
-//   const greetLuna = greet("Luna"); // returns a new function
-//   greetLuna("Hello"); // Output: Hello, Luna!
-//   greetLuna("Good morning"); // Output: Good morning, Luna!
+  // const greetLuna = greet("Luna"); // returns a new function
+  // greetLuna("Hello"); // Output: Hello, Luna!
+  // greetLuna("Good morning"); // Output: Good morning, Luna!
 
 // function allowRole(role) {
 //     return function(userRole) {
@@ -575,10 +590,6 @@ Write clean, modular code
 //   console.log(isAdmin("user"));  // false
 //   console.log(allowRole("admin")("admin"));
 //   console.log(allowRole("admin")("captain"));
-
-
-
-
 
 
 /**
@@ -664,14 +675,14 @@ This means functions are treated like values (just like numbers, strings, or obj
 //   processUser(greet); // Output: Hello, Luna!
 
   
-//   function multiplier(factor) {//HOF
-//     return function (number) {
-//       return number * factor;
-//     };
-//   }
+  // function multiplier(factor) {//HOF
+  //   return function (number) {
+  //     return number * factor;
+  //   };
+  // }
   
-//   const double = multiplier(2);
-//   console.log(double(5)); // Output: 10
+  // const double = multiplier(2);
+  // console.log(double(5)); // Output: 10
 
 // function operate(a,b,operation){
 //     operation(a,b);
@@ -701,7 +712,9 @@ This means functions are treated like values (just like numbers, strings, or obj
 
 
 // (function (){console.log("without name")})();
+
 // let sm=new (function (){console.log("without name")})();
+
 // sm.name="hello"
 // console.log(sm.name);
 
@@ -712,7 +725,7 @@ This means functions are treated like values (just like numbers, strings, or obj
 // c.game="he"
 // console.log(c.game);
 
-// (()=>{console.log("hello arrow function");})
+// (()=>{console.log("hello arrow function");})()
 // let ar=new (()=>{console.log("hello arrow function");})// intermedia value is not a constructor
 
 
@@ -773,10 +786,9 @@ This means functions are treated like values (just like numbers, strings, or obj
 // Singnal()// error sinlgnal is not a function
 // console.log(Singnal.next().value);
 // console.log(Singnal.next().value);
+// console.log(Singnal.next().done);
 // console.log(Singnal.next().value);
-
-
-
+// console.log(Singnal.next().done);
 
 
 // 🔹 What is a Constructor Function?
@@ -793,7 +805,6 @@ This means functions are treated like values (just like numbers, strings, or obj
 
 // let person1 = new Person("Alice", 25);
 // let person2 = new Person("Bob", 30);
-
 
 
 // in simple term
@@ -813,11 +824,7 @@ This means functions are treated like values (just like numbers, strings, or obj
 // person1.greet();                        // Output: Hi, I'm Alice
 
 // Key points:
-
 // Must use function keyword (not arrow functions)
-
 // Use this inside to set properties/methods
-
 // Call it with new to create a new object
-
 // Naming convention: Start with capital letter

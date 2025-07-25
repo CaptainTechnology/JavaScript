@@ -557,7 +557,7 @@
 // const arr=[1,2,,undefined,3,4,5,,"last"]
 // const newAr=arr.map((elem,index,arr)=>{
 // console.log(elem);
-// // return elem*2;//return with multiplication of 2
+// return elem*2;//return with multiplication of 2
 // })
 
 // const na=arr.map((elm)=>elm)
@@ -660,7 +660,7 @@
 
 // console.log(sort);
 
-let uns = [100, 50, 400, 30, 20, 110]
+// let uns = [100, 50, 400, 30, 20, 110]
 // let sortDes = uns.sort((a, b) => {//a=50 b=10 (first iteration) a=400 b=50 (second iteration)
 //     return b-a;
 // })
@@ -824,7 +824,7 @@ let uns = [100, 50, 400, 30, 20, 110]
 // remove all element and from index
 
 // const arr=[10,20,30,40,50]
-// // let removed=arr.splice(0)
+// let removed=arr.splice(0)
 // let removed=arr.splice(2)
 // console.log(arr,removed);
 

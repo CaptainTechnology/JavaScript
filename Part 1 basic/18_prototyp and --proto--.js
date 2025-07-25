@@ -8,7 +8,7 @@
 // // javascript function === function+object // function work as function as well as object
 
 // console.log(hello.name); // hello
-// // console.log(hello.length); // 0
+// console.log(hello.length); // 0
 // console.log(hello.prototype); // {} it is an empty object which each function has and it is called prototype object
 
 // // function provide a prototype object in which we can add properties and methods
@@ -16,6 +16,7 @@
 //     console.log("hello");
 // }
 
+// hello.prototype.greet()
 // hello.prototype.myName = "captain";
 // hello.prototype.myAge = 25;
 
@@ -86,6 +87,9 @@
 // b.__proto__.commision=1000;
 // console.log(b.salary);//12000
 // console.log(b.commision);//1000
+// console.log(b);
+// console.log(b.__proto__);
+
 
 
 
@@ -102,32 +106,34 @@
 //     }
 // }
 
-function createUser(firstName, lastName, email, age, address){
-    // const user=Object.create(userMethods);
-    const user = Object.create(createUser.prototype);// {}
-    user.firstName = firstName;
-    user.lastName = lastName;
-    user.email = email;
-    user.age = age;
-    user.address = address;
-    return user;
-}
-createUser.prototype.about = function(){
-    return `${this.firstName} is ${this.age} years old.`;
-};
-createUser.prototype.is18 = function (){
-    return this.age >= 18; 
-}
-createUser.prototype.sing = function (){
-    return "la la la la ";
-}
+// function createUser(firstName, lastName, email, age, address){
+//     // const user=Object.create(userMethods);
+//     const user = Object.create(createUser.prototype);// {}
+//     user.firstName = firstName;
+//     user.lastName = lastName;
+//     user.email = email;
+//     user.age = age;
+//     user.address = address;
+//     return user;
+// }
+// createUser.prototype.about = function(){
+//     return `${this.firstName} is ${this.age} years old.`;
+// };
+// createUser.prototype.is18 = function (){
+//     return this.age >= 18; 
+// }
+// createUser.prototype.sing = function (){
+//     return "la la la la ";
+// }
 
 
-const user1 = createUser('harshit', 'vashsith', 'harshit@gmail.com', 18, "my address");
-const user2 = createUser('harsh', 'vashsith', 'harshit@gmail.com', 19, "my address");
-const user3 = createUser('mohit', 'vashsitha', 'harshit@gmail.com', 17, "my address");
-console.log(user1);
-console.log(user1.is18());
+// const user1 = createUser('harshit', 'vashsith', 'harshit@gmail.com', 18, "my address");
+// const user2 = createUser('harsh', 'vashsith', 'harshit@gmail.com', 19, "my address");
+// const user3 = createUser('mohit', 'vashsitha', 'harshit@gmail.com', 17, "my address");
+// console.log(user1);
+// console.log(user1.is18());
+// console.log(user1.about());
+
 
 
 

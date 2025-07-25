@@ -21,7 +21,7 @@
 
 
 // class Person {
-//   salary=32000; //public property
+  // salary=32000; //public property
 
 //   constructor(name, age) {
 //     this.name = name;
@@ -30,13 +30,17 @@
 //   greet() {
 //     console.log(`Hello, my name is ${this.name}`);
 //   }
+//   pDisplay(nn){
+//     console.log("Parent class display ",nn);
+    
+//   }
 // }
 
 // const person1 = new Person("Alice", 30);
 // console.log(Person.salary);// undefined
 // console.log(person1.salary);// undefined
 
-// const person2 =  Person("Alice", 30); without new error will be show new is compulsary for calling constructor
+// const person2 =  Person("Alice", 30); //without new error will be show new is compulsary for calling constructor
 // person1.greet();  // Output: Hello, my name is Alice
 
 // 🔹 Constructor Method
@@ -59,6 +63,7 @@
 //   }
 
 //   study() {
+//     super.pDisplay("hello")
 //     console.log(`${this.name} is studying in grade ${this.grade}`);
 //   }
 // }
@@ -100,7 +105,7 @@
 // // console.log(person1.fullName());// error it  is not a function becouse it works as property
 // console.log(person1.fullName);
 // person1.fullName = "mohit vashistha";// set the property directly 
-// // console.log(person1);
+// console.log(person1);
 
 
 
@@ -114,6 +119,7 @@
 
 
 // // static methods and properties
+
 // class Person{
 //     constructor(firstName, lastName, age){
 //         this.firstName = firstName;
@@ -147,7 +153,7 @@
 // }
 
 // const person1 = new Person("harshit", "sharma", 8);
-// // console.log(person1.eat());
+// console.log(person1.eat());
 
 // console.log(person1.desc);// static property undefined becouse it relates to the class itself not the instances of the class
 // const info = Person.classInfo();
@@ -157,10 +163,12 @@
 
 
 
+// const c1=new Circle(32)//can't aceess before initialization
 
 // class Circle {
 //     #radius=333; // private field
 //     static names="captain jack";
+//     #password=78692;
 //     constructor(radius) {
 //         this.#radius = radius;
 //     }
@@ -176,9 +184,10 @@
 
 // const circle = new Circle(5);
 // console.log(circle.getArea()); // Accessing through public method
-// // console.log(circle.#radius); // SyntaxError: Private field '#radius' must be declared in an enclosing class
+// console.log(circle.#radius); // SyntaxError: Private field '#radius' must be declared in an enclosing class
 // console.log(Circle.names);
-// console.log(Circle.password);
+// console.log(Circle.#password);
+// console.log(circle.#password);
 // console.log(Circle);
 
 
@@ -187,36 +196,40 @@
 // 🔹 Class Expressions
 // Classes can also be defined as expressions, not just declarations.
 
-const Animal = class {
-  constructor(name) {
-    this.name = name;
-  }
-  speak() {
-    console.log(`${this.name} makes a noise.`);
-  }
-};
+// const Animal = class {
+//   constructor(name) {
+//     this.name = name;
+//   }
+//   speak() {
+//     console.log(`${this.name} makes a noise.`);
+//   }
+// };
+
+// const dog=new Animal("dog")
+// dog.speak()
+// const cat=new Animal("cat")
+// cat.speak()
 
 
 
+// // ✅ Benefits of Using Classes
+// // Clear and organized code.
 
-// ✅ Benefits of Using Classes
-// Clear and organized code.
+// // Follows object-oriented principles.
 
-// Follows object-oriented principles.
+// // Reusable and scalable.
 
-// Reusable and scalable.
-
-// Easier inheritance with extends.
+// // Easier inheritance with extends.
 
 
-// all in one 
-// all in one 
-// all in one 
-// all in one 
-// all in one 
-// all in one 
-// all in one 
-// all in one 
+// // all in one 
+// // all in one 
+// // all in one 
+// // all in one 
+// // all in one 
+// // all in one 
+// // all in one 
+// // all in one 
 
 
 
@@ -289,6 +302,7 @@ person1.showSSN();            // Private SSN: 123-45-6789
 
 // Call static method
 Person.sayWelcome();          // Welcome to the Person class!
+Student.sayWelcome()
 
 // Create an instance of Student
 const student1 = new Student("Bob", 18, 12);

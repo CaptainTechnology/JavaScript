@@ -7,7 +7,7 @@
 
 // function allInfo(hobby,income){
 //     console.log(this.fName," last age is ",this.age);
-//     // console.log(hobby," income is ",income);
+//     console.log(hobby," income is ",income);
 // }
 
 // const user1={
@@ -15,7 +15,7 @@
 //     age:23,
 //     getInfo:function (hobby,income){
 //         console.log(this.fName," last age is ",this.age);
-//         // console.log(hobby," income is ",income);
+//         console.log(hobby," income is ",income);
 //     }
 // }
 // const user2={
@@ -43,7 +43,7 @@
 
 // function allInfo(hobby,income){
 //   console.log(this.fName," last age is ",this.age);
-//   // console.log(hobby," income is ",income);
+//   console.log(hobby," income is ",income);
 // }
 
 // const user1={
@@ -51,7 +51,7 @@
 //   age:23,
 //   getInfo:function (hobby,income){
 //       console.log(this.fName," last age is ",this.age);
-//       // console.log(hobby," income is ",income);
+//       console.log(hobby," income is ",income);
 //   }
 // }
 // const user2={
@@ -66,8 +66,9 @@
 // allInfo.apply();
 // allInfo.apply(user1)
 // allInfo.apply(user2)
-// // allInfo.apply(user1,"Corporate Employee",12999)//error paass argument as an array
-// allInfo.apply(user1,["Corporate Employee",12999])//error
+// allInfo.apply(user1,"Corporate Employee",12999)//error paass argument as an array
+// allInfo.apply(user1,["Corporate Employee",12999])
+// allInfo.apply(user2,["Corporate Employee",12999])
 
 
 
@@ -105,7 +106,8 @@
 // user2Obje();
 
 
-// // allInfo.bind();
+// const usr=allInfo.bind();
+// usr();
 
 
 // const u1All=allInfo.bind(user1)

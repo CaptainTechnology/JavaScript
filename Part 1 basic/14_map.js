@@ -1,8 +1,6 @@
 // A Map object is a collection of key-value pairs, where each key is unique, and you can store values associated with keys. Unlike objects, where the keys are always strings (or symbols), in a Map, the keys can be any value (including objects, arrays, functions, and primitive types).
 
 
-
-
 // let map = new Map();
 // map.set("name","captain")
 // map.set('a', 1); // Adds the key 'a' with value 1
@@ -10,6 +8,8 @@
 
 // let value = map.get('a'); // Returns 1
 // let unknown = map.get('b'); // Returns undefined, since 'b' is not a key
+// // we can not get direct value of set using index but we can access using key in map
+// console.log(value,unknown);
 
 
 // console.log(map.has('a')); // true
@@ -18,20 +18,20 @@
 // console.log(map.delete('a')); // true (removes the 'a' key-value pair)
 // console.log(map.delete('b')); // false (no such key 'b')
 
-// // map.clear(); // Removes all key-value pairs from the map
+// map.clear(); // Removes all key-value pairs from the map
 
-// // console.log(map);
+// console.log(map);
 
 
-// // let keys = map.keys();
-// // for (let key of keys) {
-// //   console.log(key); // Logs all the keys
-// // }
+// let keys = map.keys();
+// for (let key of keys) {
+//   console.log(key); // Logs all the keys
+// }
 
-// // let values=map.values();
-// // for(let val of values){
-// //   console.log(val);
-// // }
+// let values=map.values();
+// for(let val of values){
+//   console.log(val);
+// }
 
 // let entries = map.entries();
 // for (let [key, value] of entries) {
@@ -134,26 +134,26 @@
 // all in one
 
 
-const map = new Map();
+// const map = new Map();
 
-map.set('name', 'John');
-map.set(42, 'Answer');
-map.set(true, 'Boolean');
+// map.set('name', 'John');
+// map.set(42, 'Answer');
+// map.set(true, 'Boolean');
 
-console.log(map.get('name'));     // "John"
-console.log(map.has(42));         // true
-console.log(map.size);            // 3
+// console.log(map.get('name'));     // "John"
+// console.log(map.has(42));         // true
+// console.log(map.size);            // 3
 
-map.delete(true);                 // removes the entry with key `true`
-map.forEach((val, key) => {
-  console.log(`${key}: ${val}`);
-});
+// map.delete(true);                 // removes the entry with key `true`
+// map.forEach((val, key) => {
+//   console.log(`${key}: ${val}`);
+// });
 
-for (let key of map.keys()) console.log(key);
-for (let val of map.values()) console.log(val);
-for (let [k, v] of map.entries()) console.log(k, v);
+// for (let key of map.keys()) console.log(key);
+// for (let val of map.values()) console.log(val);
+// for (let [k, v] of map.entries()) console.log(k, v);
 
-map.clear();                      // empties the map
-console.log(map.size);           // 0
+// map.clear();                      // empties the map
+// console.log(map.size);           // 0
 
 

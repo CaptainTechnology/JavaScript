@@ -13,9 +13,9 @@
 //     return innerFunction;
 // }
 
-// const ans = outerFunction();
-// // console.log(ans);
-// ans();
+// const answer = outerFunction();
+// console.log(answer);
+// answer();
 
 
 function printFullName(firstName, lastName){

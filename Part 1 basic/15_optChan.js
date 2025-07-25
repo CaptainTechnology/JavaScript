@@ -1,22 +1,26 @@
 
 // Optional Chaining (?.) is a JavaScript operator introduced in ES2020 that allows you to safely access deeply nested object properties or call functions without having to manually check for null or undefined at each level.
 // without optional channing access deep property can couse error
+// obj?.property
+// obj?.[expression]
+// obj?.method?.()
 
 // const user  = {
 //   name: "captain",
 //   age:23
 // }
 
-// // console.log(user.address);//undefined
-// // console.log(user.address.city);//error
+// console.log(user.address);//undefined
+// console.log(user.address.city);//error
 
 // // fist way to handle
-// // if(user.address){
-// //   console.log(user.address.city);
-// // }
+// if(user.address){
+//   console.log(user.address.city);
+// }
 
 // // second way
-// // console.log(user.address &&  user.address.city);
+// console.log(user.address && user.address.city);
+
 
 
 // // optional channing control error in short
@@ -29,19 +33,19 @@
 // // // if user is a property of another  object then error handles
 
 
-// const user  = {
-//   name: "captain",
-//   age:23,
-//   address:{
-//     city:"siddhartha nagar",
-//     street:{
-//       line2:"belouha"
-//     }
-//   },
-//   getFullName:()=>{
-//     return "captain "+" jack";
-//   }
-// }
+const user  = {
+  name: "captain",
+  age:23,
+  address:{
+    city:"siddhartha nagar",
+    street:{
+      line2:"belouha"
+    }
+  },
+  getFullName:()=>{
+    return "captain "+" jack";
+  }
+}
 
 
 // console.log(user.address?.city);
@@ -51,7 +55,7 @@
 
 // // with function
 // console.log(user.getFullName());
-// // console.log(user.noFunction());
+// console.log(user.noFunction());
 // //is  not function error
 
 // console.log(user.noFunction?.());

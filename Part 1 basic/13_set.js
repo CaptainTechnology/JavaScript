@@ -1,4 +1,5 @@
 // // set in  detail in js
+// a Set is a built-in object that lets you store unique values of any type — primitives or object references.
 
 
 // const emptySet = new Set();
@@ -20,7 +21,7 @@
 // let john = { name: "John" };
 // let pete = { name: "Pete" };
 // let mary = { name: "Mary" };
-// let sam = { name: "Mary" };
+// let sam = { name: "Sam" };
 
 // // visits, some users come multiple times
 // const set = new Set();
@@ -34,7 +35,6 @@
 
 // set.forEach((elem,index)=>{
 //   console.log(elem);
-  
 // })
 
 // const set=new Set();
@@ -44,6 +44,7 @@
 // const elm=set.add(50).add(60)
 // console.log(elm);//return complete set
 // set.delete(10,20,30)//only 10 will be delete
+// set.delete(20)
 // console.log(set);
 
 // set.forEach((item,index)=>{
@@ -54,8 +55,10 @@
 // console.log(valExist,valNotExis);
 
 
-// set.delete(10);
+// const val=set.delete(10);
 // console.log(set);
+// console.log(val);
+
 
 // let deleted=set.delete(10);//return true
 // let deleted=set.delete(100);//false
@@ -73,6 +76,8 @@
 
 // it is iterable but it also provide for each method
 // forEach method can apply on it
+// const set=new Set([1, 2, 2, 3, 4, 5, 5]);
+
 // set.forEach((item)=>{
 //   console.log(item);
 // })
@@ -90,8 +95,17 @@
 // }
 
 // string is iterable but it doesn't provide forEach method
-// for (const element of "hello") {
-//   console.log(element);
+
+// "hello".forEach(element => {
+//     console.log(element); 
+// });
+
+// set.forEach(element => {
+//     console.log(element); 
+// });
+
+// for (const char of "hello") {
+//   console.log(char);
 // }
 
 // const keys=set.keys();// work same as values becouse set only cotains keys
@@ -103,6 +117,7 @@
 
 
 
+// const set=new Set([1, 2, 2, 3, 4, 5, 5]);
 
 // const entries=set.entries();
 // console.log(entries);//return iterator object like [val,val]pair becouse set includes key as value key and val are same
@@ -113,7 +128,7 @@
 
 
 // set is not a array so array method does apply on it directly but we can change set into array
-
+// const set=new Set([1, 2, 2, 3, 4, 5, 5]);
 // const array=Array.from(set)
 // console.log(array);//converted into array
 
