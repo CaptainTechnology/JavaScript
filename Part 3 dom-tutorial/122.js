@@ -1,11 +1,12 @@
 const allButtons = document.querySelectorAll(".my-buttons button");
 
 
-// for(let button of allButtons){
-//     button.addEventListener("click", function(){
-//         console.log(this);
-//     })
-// }
+for(let button of allButtons){
+    button.addEventListener("click", function(event){
+        console.log(this);
+        console.log(event);
+    })
+}
 
 // for(let i = 0 ; i< allButtons.length; i++){
 //     allButtons[i].addEventListener("click", function(){
@@ -17,3 +18,5 @@ const allButtons = document.querySelectorAll(".my-buttons button");
 //         console.log(this);
 //         });
 // })
+
+// console.log('hello')

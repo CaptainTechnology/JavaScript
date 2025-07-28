@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>NodeList vs HTMLCollection</title>
+  <style>
+    .item {
+      padding: 10px;
+      margin: 5px;
+      border: 1px solid black;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <h2>NodeList vs HTMLCollection Example</h2>
+
+  <!-- Common HTML elements -->
+  <div class="item">Item 1</div>
+  <div class="item">Item 2</div>
+  <div class="item">Item 3</div>
+
+  <button id="addItem">Add New Item</button>
+
+  <script>
+    // 🌟 Selecting elements using different methods
+
+    // HTMLCollection: Live collection (auto-updates if DOM changes)
+    const htmlCollection = document.getElementsByClassName('item');
+
+    // NodeList: Static collection (snapshot when created)
+    const nodeList = document.querySelectorAll('.item');
+
+    console.log('Initial HTMLCollection:', htmlCollection); // Length: 3
+    console.log('Initial NodeList:', nodeList); // Length: 3
+
+    // ✅ NodeList supports forEach directly
+    nodeList.forEach((el, index) => {
+      el.style.color = 'blue'; // Change text color to blue
+      el.textContent = `NodeList Item ${index + 1}`;
+    });
+
+    // ❌ HTMLCollection does not support forEach
+    // ✅ Convert HTMLCollection to Array first
+    Array.from(htmlCollection).forEach((el, index) => {
+      el.style.backgroundColor = 'lightyellow'; // Set background color
+    });
+
+    // 🔁 Button to add new item
+    const addButton = document.getElementById('addItem');
+    addButton.addEventListener('click', () => {
+      const newDiv = document.createElement('div');
+      newDiv.className = 'item';
+      newDiv.textContent = 'New Item (Added)';
+      document.body.appendChild(newDiv);
+
+      console.log('After Adding New Element:');
+      console.log('HTMLCollection:', htmlCollection.length); // Will increase (live)
+      console.log('NodeList:', nodeList.length); // Will stay same (static)
+    });
+
+    // 🧠 Summary in console
+    console.log(`
+      🟢 HTMLCollection:
+        - Returned by getElementsByClassName, getElementsByTagName, etc.
+        - Live (updates when DOM changes)
+        - Only contains element nodes
+
+      🔵 NodeList:
+        - Returned by querySelectorAll, childNodes, etc.
+        - Static (does not update when DOM changes)
+        - May contain text, comment, or element nodes
+        - Supports forEach
+    `);
+  </script>
+</body>
+</html>

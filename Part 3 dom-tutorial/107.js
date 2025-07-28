@@ -1,7 +1,8 @@
 // get and set attrubutes
-const link = document.querySelector("a");
-console.log(link.getAttribute("href").slice(1));
+// const link = document.querySelector("a");
+// console.log(link.getAttribute("href").slice(1));
 // link.setAttribute("href", "https://codprog.com");
+// // link.setAttribute("target","_blank")
 // console.log(link.getAttribute("href"));
 
 // const inputElement = document.querySelector(".form-todo input");
